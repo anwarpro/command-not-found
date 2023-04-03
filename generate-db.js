@@ -24,9 +24,9 @@ Object.keys(repoJSON).forEach((repo_path) => {
   const repo = repoJSON[repo_path];
   archs.forEach((arch) => {
     https.get(
-      `${repositoryURL}/${repo.name}/dists/${repo.distribution}/main/Contents-${arch}.gz`,
+      `${repositoryURL}/${repo.name}/dists/${repo.distribution}/main/Contents-${arch}.xz`,
       (res) => {
-        console.log(`${repositoryURL}/${repo.name}/dists/${repo.distribution}/main/Contents-${arch}.gz`);
+        console.log(`${repositoryURL}/${repo.name}/dists/${repo.distribution}/main/Contents-${arch}.xz`);
         if (res.statusCode != 200) {
           throw new Error(`${res.url} returned ${res.statusCode}`);
         }
